@@ -1,2 +1,11 @@
-# detection-driven-threat-hunting
-A mini platform focused on detection-driven threat hunting using hypothesis-based analysis and log-derived signals.
+# Detection-Driven Threat Hunting Mini Platform
+
+## Objective
+This project focuses on hypothesis-driven threat hunting and detection logic development using log-derived signals.
+
+## Initial Use Case
+Credential Access – Password Spraying (MITRE ATT&CK T1110)
+
+## Why This Project Exists
+To practice how SOC analysts and detection engineers think:
+from raw logs → hypothesis → detection logic → alert reasoning.
