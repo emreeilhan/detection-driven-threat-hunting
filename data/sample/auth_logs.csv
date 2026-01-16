@@ -19,3 +19,9 @@ timestamp,username,source_ip,result,log_source
 2026-01-17T10:25:41Z,harry,192.168.1.20,success,windows_ad
 2026-01-17T11:02:03Z,irene,10.0.0.7,success,vpn
 2026-01-17T11:45:55Z,jack,192.168.1.21,success,windows_ad
+2026-01-17T12:00:01Z,svc_backup,203.0.113.5,failure,windows_ad
+2026-01-17T12:00:04Z,svc_update,203.0.113.5,failure,windows_ad
+2026-01-17T12:00:06Z,svc_monitor,203.0.113.5,failure,windows_ad
+2026-01-17T12:00:08Z,svc_sync,203.0.113.5,failure,windows_ad
+2026-01-17T12:00:10Z,svc_scan,203.0.113.5,failure,windows_ad
+
