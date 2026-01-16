@@ -21,7 +21,7 @@ events.sort(key=lambda x: x["timestamp"])
 failed_by_ip = defaultdict(list)
 
 for event in events:
-    if event["result"] == "failure":
+    if event["result"] == "failure" and not event["username"].startswith("svc_"):
         failed_by_ip[event["source_ip"]].append(event)
 
 alerts = []
