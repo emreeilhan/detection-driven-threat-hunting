@@ -6,6 +6,10 @@ This project focuses on **hypothesis-driven threat hunting** and **detection log
 
 The platform emphasizes **correlation-based detections**, where multiple weak indicators are combined to produce **high-confidence security alerts**, reflecting how real SOC teams reason about threats.
 
+I built this while learning; my goal was to practice turning raw logs into simple, clear detection ideas.
+I wanted to see how combining a few weak signals can create a more reliable alert than a single event.
+This is a small, hands-on project where I try to think like a SOC analyst and document my reasoning.
+
 ---
 
 ## Why This Project Exists
