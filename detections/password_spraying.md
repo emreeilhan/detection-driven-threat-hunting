@@ -18,3 +18,16 @@ to multiple different accounts in rapid succession.
 - Shared IP environments (VPN, NAT)
 - Jump servers
 - Poorly configured service accounts
+
+## Severity Assessment
+
+This detection is classified as HIGH severity when
+password spraying activity is followed by a successful
+authentication from the same source IP.
+
+The fail-to-success correlation significantly increases
+confidence, as it indicates successful credential compromise
+rather than benign user behavior.
+
+Such scenarios require immediate incident response due to
+the risk of lateral movement and data exfiltration.
