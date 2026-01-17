@@ -12,3 +12,9 @@ allowing attackers long-term access to email, files, and APIs.
 HIGH severity is assigned when a user grants high-risk scopes
 to a newly created or unknown application, indicating likely
 social engineering or token abuse.
+## Confidence Enhancement
+
+Severity is increased to HIGH when OAuth consent is granted
+from a previously unseen IP address for the user, as this
+suggests session hijacking or token misuse rather than
+legitimate user behavior.
