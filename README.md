@@ -13,3 +13,11 @@ Credential Access – Password Spraying (MITRE ATT&CK T1110)
 ## Why This Project Exists
 To practice how SOC analysts and detection engineers think:
 from raw logs → hypothesis → detection logic → alert reasoning.
+
+## Detection Philosophy
+
+This project focuses on correlation-based detections rather than
+single-event alerts. Each detection is designed to combine multiple
+weak signals into high-confidence outcomes, mimicking real SOC
+decision-making.
+
