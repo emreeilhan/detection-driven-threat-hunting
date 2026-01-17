@@ -1,0 +1,5 @@
+timestamp,username,app_name,app_id,consent_type,scopes,is_new_app,publisher,ip_address,log_source
+2026-01-18T09:10:00Z,emre,Microsoft Graph Explorer,0001,admin,User.Read,false,Microsoft,31.155.20.10,entra_id
+2026-01-18T10:22:00Z,alice,HR Portal,1002,user,User.Read,false,Contoso,203.0.113.20,entra_id
+2026-01-18T11:05:00Z,emre,Invoice Viewer Pro,9f8a,user,"Mail.Read,Files.Read.All",true,Unknown,185.220.101.5,entra_id
+2026-01-18T11:40:00Z,bob,Time Tracker,7711,user,User.Read,false,Contoso,198.51.100.30,entra_id
