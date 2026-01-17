@@ -2,19 +2,28 @@
 
 ## Detection Summary
 This detection identifies potentially malicious OAuth applications
-that obtain high-privilege access through user consent.
+that obtain high-privilege access through user-initiated consent.
 
 ## Why This Is Dangerous
-OAuth tokens can persist beyond password resets and MFA changes,
-allowing attackers long-term access to email, files, and APIs.
+OAuth access and refresh tokens are not automatically revoked
+after password resets or MFA changes, enabling long-term access
+to user data and APIs.
 
-## Severity Rationale
-HIGH severity is assigned when a user grants high-risk scopes
-to a newly created or unknown application, indicating likely
-social engineering or token abuse.
+## Detection Logic
+- User-initiated consent
+- High-risk scopes (Mail, Files, Directory)
+- New or uncommon application
+- Unknown publisher
+
+## Severity Assessment
+- MEDIUM: New app with high-risk scopes
+- HIGH: New app with high-risk scopes from a previously unseen IP
+
+## Common False Positives
+- Legitimate internal applications
+- Developer testing environments
+
 ## Confidence Enhancement
-
-Severity is increased to HIGH when OAuth consent is granted
-from a previously unseen IP address for the user, as this
-suggests session hijacking or token misuse rather than
-legitimate user behavior.
+Severity is increased when OAuth consent originates
+from a new IP address for the user, reducing the
+likelihood of legitimate behavior.
