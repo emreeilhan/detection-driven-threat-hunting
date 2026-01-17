@@ -14,11 +14,11 @@ stolen credentials, session hijacking, or token reuse.
 - Same user
 - Multiple successful logins
 - Different countries
-- Time difference below defined threshold
+- Time difference below defined threshold (any subsequent login)
 
 ## Severity Assessment
 - MEDIUM: Country change within time threshold
-- HIGH: Country change combined with new ASN or new device
+- HIGH: Country change combined with new ASN, new device, or new IP
 
 ## Common False Positives
 - Corporate VPNs

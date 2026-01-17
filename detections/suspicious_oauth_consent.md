@@ -12,12 +12,12 @@ to user data and APIs.
 ## Detection Logic
 - User-initiated consent
 - High-risk scopes (Mail, Files, Directory)
-- New or uncommon application
-- Unknown publisher
+- New or uncommon application (optional)
+- Unknown publisher (optional)
 
 ## Severity Assessment
-- MEDIUM: New app with high-risk scopes
-- HIGH: New app with high-risk scopes from a previously unseen IP
+- MEDIUM: High-risk scopes granted via user consent
+- HIGH: High-risk scopes granted from a previously unseen IP
 
 ## Common False Positives
 - Legitimate internal applications

@@ -19,8 +19,9 @@ this strongly suggests identity abuse or social engineering.
 ## Severity
 HIGH when:
 - High-risk scopes are granted
-- AND the app is new or uncommon
 - AND consent is user-initiated
+- AND consent comes from a new IP
 
 MEDIUM when:
-- App is known but scopes are elevated
+- High-risk scopes are granted via user consent
+- AND the consent does not come from a new IP

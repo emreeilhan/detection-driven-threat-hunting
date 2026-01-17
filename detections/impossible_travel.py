@@ -25,29 +25,31 @@ alerts = []
 for user, logins in events_by_user.items():
     for i in range(len(logins) - 1):
         first = logins[i]
-        second = logins[i + 1]
 
-        time_diff = second["timestamp"] - first["timestamp"]
+        for j in range(i + 1, len(logins)):
+            second = logins[j]
+            time_diff = second["timestamp"] - first["timestamp"]
 
-        if (
-            time_diff <= TIME_THRESHOLD
-            and first["country"] != second["country"]
-        ):
-            severity = "MEDIUM"
+            if time_diff > TIME_THRESHOLD:
+                break
 
-            if (
-                first["asn"] != second["asn"]
-                or first["device_id"] != second["device_id"]
-            ):
-                severity = "HIGH"
+            if first["country"] != second["country"]:
+                severity = "MEDIUM"
 
-            alerts.append({
-                "user": user,
-                "from": f"{first['country']} ({first['city']})",
-                "to": f"{second['country']} ({second['city']})",
-                "time_diff": time_diff,
-                "severity": severity
-            })
+                if (
+                    first["asn"] != second["asn"]
+                    or first["device_id"] != second["device_id"]
+                    or first["source_ip"] != second["source_ip"]
+                ):
+                    severity = "HIGH"
+
+                alerts.append({
+                    "user": user,
+                    "from": f"{first['country']} ({first['city']})",
+                    "to": f"{second['country']} ({second['city']})",
+                    "time_diff": time_diff,
+                    "severity": severity
+                })
 
 for alert in alerts:
     print("[ALERT] Impossible Travel Detected")

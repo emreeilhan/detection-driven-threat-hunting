@@ -25,4 +25,4 @@ or compromised credentials.
 ## Severity
 HIGH when:
 - success → success impossible travel is observed
-- AND the second login is from a new device or new ASN (later enhancement)
+- AND the second login is from a new device, new ASN, or new IP

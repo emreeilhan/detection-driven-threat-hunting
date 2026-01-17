@@ -85,7 +85,7 @@ detections/
  └── suspicious_oauth_consent.md
 
 docs/
- └── README.md
+ └── use-cases/
 ```
 
 Each detection includes:
@@ -120,4 +120,3 @@ This project is designed for:
 ## Disclaimer
 
 All data in this repository is **synthetic and non-production**. The project is intended solely for educational and skill-building purposes.
-

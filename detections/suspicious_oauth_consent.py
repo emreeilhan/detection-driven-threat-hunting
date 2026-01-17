@@ -15,6 +15,7 @@ with open(LOG_FILE, newline="") as f:
         user = row["username"]
         ip = row["ip_address"]
         scopes = set(s.strip() for s in row["scopes"].split(","))
+        is_new_app = row["is_new_app"].lower() == "true"
 
         risky_scopes = bool(scopes & HIGH_RISK_SCOPES)
         new_ip = ip not in known_ips[user]
@@ -22,18 +23,16 @@ with open(LOG_FILE, newline="") as f:
         # Register IP as seen
         known_ips[user].add(ip)
 
-        if (
-            row["consent_type"] == "user"
-            and row["is_new_app"] == "true"
-            and row["publisher"] == "Unknown"
-            and risky_scopes
-        ):
+        if row["consent_type"] == "user" and risky_scopes:
             severity = "MEDIUM"
-            reason = "Suspicious OAuth consent with high-risk scopes"
+            reason = "High-risk scopes granted via user consent"
+
+            if is_new_app or row["publisher"] == "Unknown":
+                reason = "New or unknown app with high-risk scopes"
 
             if new_ip:
                 severity = "HIGH"
-                reason = "OAuth consent from new IP with high-risk scopes"
+                reason = f"{reason} from new IP"
 
             alerts.append({
                 "user": user,
