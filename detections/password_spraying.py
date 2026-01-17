@@ -47,9 +47,30 @@ for ip, attempts in failed_by_ip.items():
                 "end": window_end
             })
             break
-
 for alert in alerts:
-    print(f"[ALERT] Possible Password Spraying detected")
-    print(f"        Source IP: {alert['source_ip']}")
+    ip = alert["source_ip"]
+    end_time = alert["end"]
+
+    success_found = False
+    compromised_user = None
+
+    for event in events:
+        if (
+            event["source_ip"] == ip
+            and event["result"] == "success"
+            and end_time <= event["timestamp"] <= end_time + timedelta(minutes=5)
+            and event["username"] in alert["users"]   # 🔑 KRİTİK
+        ):
+            success_found = True
+            compromised_user = event["username"]
+            break
+
+    severity = "HIGH" if success_found else "MEDIUM"
+
+    print(f"[ALERT] Password Spraying Detected")
+    print(f"        Source IP: {ip}")
     print(f"        Users targeted: {len(alert['users'])}")
-    print(f"        Time window: {alert['start']} → {alert['end']}")
+    print(f"        Severity: {severity}")
+
+    if success_found:
+        print(f"        Compromised account: {compromised_user}")
