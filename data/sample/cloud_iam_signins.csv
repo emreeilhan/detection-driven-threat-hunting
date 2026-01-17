@@ -1,0 +1,8 @@
+timestamp,username,source_ip,result,country,city,asn,user_agent,device_id,log_source
+2026-01-17T10:00:00Z,emre,31.155.20.10,success,TR,Antalya,9121,Chrome,dev-01,entra_id
+2026-01-17T10:12:00Z,emre,31.155.20.10,success,TR,Antalya,9121,Chrome,dev-01,entra_id
+2026-01-17T10:35:00Z,emre,185.220.101.5,success,DE,Berlin,680,Firefox,dev-x9,entra_id
+2026-01-17T11:20:00Z,alice,203.0.113.10,success,US,New York,15169,Chrome,dev-a1,entra_id
+2026-01-17T11:50:00Z,alice,203.0.113.10,success,US,New York,15169,Chrome,dev-a1,entra_id
+2026-01-17T12:10:00Z,bob,198.51.100.20,success,DE,Hamburg,3320,Edge,dev-b2,entra_id
+2026-01-17T12:40:00Z,bob,198.51.100.20,success,DE,Hamburg,3320,Edge,dev-b2,entra_id
